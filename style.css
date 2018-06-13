@@ -1,0 +1,48 @@
+label, input, button {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 24px;
+}
+
+#parameters-panel {
+    width: 300px;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    float: left;
+    background-color: lightblue;
+}
+
+.parameter {
+    width: 300px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+
+button {
+    width: 100px;
+    height: 40px;
+    margin: 10 100 10 100;
+    background-color: lightcyan;
+    border: none;
+    border-radius: 5px;
+}
+
+label {
+    width: 70px;
+}
+
+input {
+    width: 220px;
+    float: right;
+    border: none;
+    line-height: 50px;
+    margin: 4 5;
+}
+
+#graph {
+    margin-left: 300px;
+    height: 100%;
+}

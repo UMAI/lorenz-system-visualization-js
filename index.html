@@ -1,0 +1,29 @@
+<html>
+    <header>
+        <link rel="stylesheet" href="style.css">
+        <script src="lorenz-system.js"></script>
+        <script src="plotly-latest.min.js"></script>
+        <script src="numeric-1.2.6.js"></script>
+    </header>
+    <body>
+        <div id="parameters-panel">
+            <div class="parameter">
+                <label for="sigma">σ=</label><input type="number" id="sigma" value=10>
+            </div>
+            <div class="parameter">
+                <label for="beta">β=</label><input type="number" id="beta" value=2.667>
+            </div>
+            <div class="parameter">
+                <label for="rho">ρ=</label><input type="number" id="rho" value=28>
+            </div>
+            <div class="parameter">
+                <label for="startTime">t<sub>start</sub>=</label><input type="number" id="startTime" value=0>
+            </div>
+            <div class="parameter">
+                <label for="endTime">t<sub>end</sub>=</label><input type="number" id="endTime" value=4>
+            </div>
+            <button type="button" onclick="drawLorenzAttractor();">DRAW</button>
+        </div>
+        <div id="graph"></div>
+    </body>
+</html>
