@@ -22,7 +22,17 @@
             <div class="parameter">
                 <label for="endTime">t<sub>end</sub>=</label><input type="number" id="endTime" value=4>
             </div>
-            <button type="button" onclick="drawLorenzAttractor();">DRAW</button>
+            <div class="parameter">
+                <label for="x0">x<sub>0</sub>=</label><input type="number" id="x0" value=1>
+            </div>
+            <div class="parameter">
+                <label for="y0">y<sub>0</sub>=</label><input type="number" id="y0" value=1>
+            </div>
+            <div class="parameter">
+                <label for="z0">z<sub>0</sub>=</label><input type="number" id="z0" value=1>
+            </div>
+            <button type="button" onclick="drawLorenzAttractor('NEW');">NEW PLOT</button>
+            <button type="button" onclick="drawLorenzAttractor('ADD');">ADD PLOT</button>
         </div>
         <div id="graph"></div>
     </body>

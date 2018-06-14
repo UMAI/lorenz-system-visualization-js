@@ -22,12 +22,12 @@ label, input, button {
 }
 
 button {
-    width: 100px;
+    width: 150px;
     height: 40px;
-    margin: 10 100 10 100;
+    margin: 10 75 10 75;
     background-color: lightcyan;
     border: none;
-    border-radius: 5px;
+    border-radius: 3px;
 }
 
 label {
