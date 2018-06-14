@@ -54,6 +54,7 @@ function drawLorenzAttractor(addOrNew) {
         Plotly.newPlot("graph", [{
             type : "scatter3d",
             mode : "lines",
+            name : "Plot 1",
             x : x,
             y : y,
             z : z,
@@ -74,6 +75,7 @@ function drawLorenzAttractor(addOrNew) {
         });
     } else {
         var c = "yellow";
+        var plotNo = 2;
         if (document.getElementById("graph").data.length == 1) {
             var update = {
                 color : "blue",
@@ -82,12 +84,15 @@ function drawLorenzAttractor(addOrNew) {
             Plotly.restyle("graph", update);
         } else if (document.getElementById("graph").data.length == 2) {
             c = "red";
+            plotNo = 3;
         } else if (document.getElementById("graph").data.length == 3) {
             c = "green";
+            plotNo = 4;
         }
         Plotly.plot("graph", [{
             type : "scatter3d",
             mode : "lines",
+            name : "Plot " + plotNo,
             x : x,
             y : y,
             z : z,

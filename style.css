@@ -1,5 +1,6 @@
 label, input, button {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
     font-size: 24px;
 }
 
@@ -11,7 +12,7 @@ label, input, button {
     top: 0;
     bottom: 0;
     float: left;
-    background-color: lightblue;
+    background-color: lightgoldenrodyellow;
 }
 
 .parameter {
@@ -25,8 +26,8 @@ button {
     width: 150px;
     height: 40px;
     margin: 10 75 10 75;
-    background-color: lightcyan;
-    border: none;
+    background-color: lightyellow;
+    border: 1px solid lightsalmon;
     border-radius: 3px;
 }
 
@@ -37,8 +38,9 @@ label {
 input {
     width: 220px;
     float: right;
-    border: none;
-    line-height: 50px;
+    border: 1px solid lightsalmon;
+    border-radius: 3px;
+    line-height: 48px;
     margin: 4 5;
 }
 
