@@ -1,39 +1,41 @@
 <html>
     <header>
-        <link rel="stylesheet" href="style.css">
-        <script src="lorenz-system.js"></script>
-        <script src="plotly-latest.min.js"></script>
-        <script src="numeric-1.2.6.js"></script>
+        <link rel='stylesheet' href='style.css'>
+        <script src='lorenz-system.js'></script>
+        <script src='plotly-latest.min.js'></script>
+        <script src='numeric-1.2.6.js'></script>
     </header>
     <body>
-        <div id="parameters-panel">
-            <div class="parameter">
-                <label for="sigma">σ=</label><input type="number" id="sigma" value=10>
+        <div id='parameters-panel'>
+            <div class='parameter'>
+                <label for='sigma'>&#x03C3=</label><input type='number' id='sigma' value=10 step='any' min=0>
             </div>
-            <div class="parameter">
-                <label for="beta">β=</label><input type="number" id="beta" value=2.667>
+            <div class='parameter'>
+                <label for='r'>r=</label><input type='number' id='r' value=28 step='any' min=0>
             </div>
-            <div class="parameter">
-                <label for="rho">ρ=</label><input type="number" id="rho" value=28>
+            <div class='parameter'>
+                <label for='b'>b=</label><input type='number' id='b' value=2.667 step='any' min=0>
             </div>
-            <div class="parameter">
-                <label for="startTime">t<sub>start</sub>=</label><input type="number" id="startTime" value=0>
+            <div class='parameter'>
+                <label for='startTime'>t<sub>start</sub>=</label><input type='number' id='startTime' value=0 step='any'>
             </div>
-            <div class="parameter">
-                <label for="endTime">t<sub>end</sub>=</label><input type="number" id="endTime" value=4>
+            <div class='parameter'>
+                <label for='endTime'>t<sub>end</sub>=</label><input type='number' id='endTime' value=30 step='any'>
             </div>
-            <div class="parameter">
-                <label for="x0">x<sub>0</sub>=</label><input type="number" id="x0" value=1>
+            <div class='parameter'>
+                <label for='x0'>x<sub>0</sub>=</label><input type='number' id='x0' value=1 step='any'>
             </div>
-            <div class="parameter">
-                <label for="y0">y<sub>0</sub>=</label><input type="number" id="y0" value=1>
+            <div class='parameter'>
+                <label for='y0'>y<sub>0</sub>=</label><input type='number' id='y0' value=0 step='any'>
             </div>
-            <div class="parameter">
-                <label for="z0">z<sub>0</sub>=</label><input type="number" id="z0" value=1>
+            <div class='parameter'>
+                <label for='z0'>z<sub>0</sub>=</label><input type='number' id='z0' value=0 step='any'>
             </div>
-            <button type="button" onclick="drawLorenzAttractor('NEW');">NEW PLOT</button>
-            <button type="button" onclick="drawLorenzAttractor('ADD');">ADD PLOT</button>
+            <button type='button' onclick='drawLorenzAttractor("NEW");'>NEW PLOT</button>
+            <button type='button' onclick='drawLorenzAttractor("ADD");'>ADD PLOT</button>
+            <button type='button' onclick='startAnimation();' id='startAnimation'>START ANIMATION</button>
+            <button type='button' onclick='removeAll();'>REMOVE ALL</button>
         </div>
-        <div id="graph"></div>
+        <div id='graph'></div>
     </body>
 </html>
