@@ -24,16 +24,16 @@ function drawLorenzAttractor(addOrNew) {
         startTime = 0;
     }
     if (isNaN(endTime)) {
-        endTime = 4;
+        endTime = 30;
     }
     if (isNaN(x0)) {
         x0 = 1;
     }
     if (isNaN(y0)) {
-        y0 = 1;
+        y0 = 0;
     }
     if (isNaN(z0)) {
-        z0 = 1;
+        z0 = 0;
     }
 
     // find solutions of Lorenz system
@@ -43,8 +43,17 @@ function drawLorenzAttractor(addOrNew) {
                 x[0] * x[1] - b * x[2]];
     }
     
-    var dopri = numeric.dopri(startTime, endTime, [x0, y0, z0], f, 1e-6, 10000);
-    var solution = dopri.y;
+    var dopri = numeric.dopri(0, endTime, [x0, y0, z0], f, 1e-6, 10000);
+    var t = [];
+    for (i = 0; i < dopri.x.length; i++) {
+        if (dopri.x[i] >= startTime) {
+            t.push(dopri.x[i]);
+        }
+        if (dopri.x[i] > endTime) {
+            break;
+        }
+    }
+    var solution = dopri.at(t);
     var x = [];
     var y = [];
     var z = [];
