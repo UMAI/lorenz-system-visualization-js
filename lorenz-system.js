@@ -1,4 +1,7 @@
+var ANIMATION_PRESENT = false;
+
 function drawLorenzAttractor(addOrNew) {
+    ANIMATION_PRESENT = false;
     // obtain parameter values
     var sigma = parseFloat(document.getElementById('sigma').value);
     var b = parseFloat(document.getElementById('b').value);
@@ -121,6 +124,7 @@ function drawLorenzAttractor(addOrNew) {
 }
 
 function startAnimation() {
+    ANIMATION_PRESENT = true;
     var graphDiv = document.getElementById('graph');
     var numberOfPlots = graphDiv.data.length;
     var x = [];
@@ -178,15 +182,42 @@ function startAnimation() {
             frame : {
                 duration : 0,
                 redraw : false
-            }
+            },
+            mode : 'afterall'
         });
     }
 }
 
 function removeAll() {
+    ANIMATION_PRESENT = false;
     var graphDiv = document.getElementById('graph');
-    while (graphDiv.data.length > 0) {
-        Plotly.deleteTraces(graphDiv, 0);
+    var numberOfPlots = graphDiv.data.length;
+    var traces = [];
+    for (i = 0; i < numberOfPlots; i++) {
+        traces.push(i);
     }
+    Plotly.deleteTraces(graphDiv, traces);
     graphDiv.style.visibility = 'hidden';
+}
+
+function stopAnimation() {
+    var graphDiv = document.getElementById('graph');
+    Plotly.animate(graphDiv, [], {mode : 'immediate'});
+}
+
+function restart() {
+    var graphDiv = document.getElementById('graph');
+    if (!ANIMATION_PRESENT) {
+        startAnimation();
+    } else {
+        stopAnimation();
+        var numberOfPlots = graphDiv.data.length;
+        var traces = [];
+        for (i = numberOfPlots/2; i < numberOfPlots; i++) {
+            traces.push(i);
+        }
+        Plotly.deleteTraces(graphDiv, traces);
+        ANIMATION_PRESENT = false;
+        startAnimation();
+    }
 }

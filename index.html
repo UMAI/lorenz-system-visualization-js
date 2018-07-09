@@ -33,7 +33,9 @@
             </div>
             <button type='button' onclick='drawLorenzAttractor("NEW");'>NEW PLOT</button>
             <button type='button' onclick='drawLorenzAttractor("ADD");'>ADD PLOT</button>
-            <button type='button' onclick='startAnimation();' id='startAnimation'>START ANIMATION</button>
+            <button type='button' onclick='startAnimation();' class='animation'>START ANIMATION</button>
+            <button type='button' onclick='stopAnimation();' class='animation'>STOP ANIMATION</button>
+            <button type='button' onclick='restart();'>RESTART</button>
             <button type='button' onclick='removeAll();'>REMOVE ALL</button>
         </div>
         <div id='graph'></div>
