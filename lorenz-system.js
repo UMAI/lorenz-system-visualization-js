@@ -96,7 +96,7 @@ function drawLorenzAttractor(addOrNew) {
         }
         Plotly.newPlot(graphDiv, data, layout);
     } else {
-        var color = ['blue', 'orange', 'red', 'green', 'pink', 'black'];
+        var color = ['blue', 'red', 'green', 'orange', 'pink', 'black'];
         if (graphDiv.data.length == 1) {
             var update = {
                 'line.color' : color[0]
@@ -165,6 +165,11 @@ function startAnimation() {
                 color : color
             }
         });
+
+        var update = {
+            opacity : 0.2
+        };
+        Plotly.update(graphDiv, update, i);
     };
 
     Plotly.plot(graphDiv, data);
